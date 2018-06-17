@@ -28,9 +28,14 @@ class game :
             i=i+1;
                     
     def add(self, index, p) :
-        i=int(index[0])-1
-        j=int(index[2])-1
-        if i>2 or i<0 or j>2 or j<0 :
+        try : 
+           i=int(index[0])-1
+           j=int(index[2])-1
+           if i>2 or i<0 or j>2 or j<0 :
+               return 0
+        except ValueError :
+            return 0
+        except IndexError :
             return 0
         if(self.board[i][j] == "-") :            
             if(p==1) :
